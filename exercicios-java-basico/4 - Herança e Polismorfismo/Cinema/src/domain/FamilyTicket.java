@@ -8,12 +8,12 @@ public non-sealed class FamilyTicket extends Ticket {
     public FamilyTicket(double price, String name, boolean isSubtitled, int numberOfPeople) {
         super(price, name, isSubtitled);
         this.numberOfPeople = numberOfPeople;
-        this.discount = numberOfPeople > 3 ? 5 : 0;
+        this.discount = numberOfPeople > 3 ? price * 0.05 : 0;
     }
 
     @Override
     public double returnRealPrice() {
-        return (price * discount) / 100;
+        return (price - discount) * numberOfPeople ;
     }
 
 }
