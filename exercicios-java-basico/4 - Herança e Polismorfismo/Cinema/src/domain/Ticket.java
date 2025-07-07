@@ -1,10 +1,10 @@
 package domain;
 
-public abstract class Ticket {
+public abstract sealed class Ticket permits HalfPriceTicket, FamilyTicket{
 
-    private double price;
-    private String movieTitle;
-    private boolean isSubtitled;
+    protected double price;
+    protected String movieTitle;
+    protected boolean isSubtitled;
 
     public Ticket(double price, String movieTitle, boolean isSubtitled) {
         this.price = price;
